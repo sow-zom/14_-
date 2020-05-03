@@ -16,7 +16,7 @@ namespace _14_OperatorsOverloading_Indexers
     {
         static void Main(string[] args)
         {
-
+            Console.WriteLine("new");
 
         }
     }

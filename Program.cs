@@ -15,11 +15,7 @@ namespace _14_OperatorsOverloading_Indexers
             real = c1;
             imaginary = c2;
         }
-        public ComplexNumber(string c1)
-        {
-           // real = c1;
-            
-        }
+
         public override string ToString()
         {
             return string.Format("\n{0} - real \n{1} - imaginary", real, imaginary);
@@ -74,7 +70,6 @@ namespace _14_OperatorsOverloading_Indexers
         {
             ComplexNumber x = new ComplexNumber(11, 5);
             ComplexNumber y = new ComplexNumber(11, 5);
-            ComplexNumber z = new ComplexNumber("dw");
             Console.WriteLine(x != y);
             Console.Write(x > y);
             //string f = Console.ReadLine();

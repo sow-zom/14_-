@@ -32,10 +32,10 @@ namespace _14_OperatorsOverloading_Indexers
             int newimaginary = c1.imaginary - c2.imaginary;
             return new PersonComplexNumber(newreal, newimaginary);
         }
-        public static bool operator ==(PersonComplexNumber c1, PersonComplexNumber c2)
+        public static bool operator ==(PersonComplexNumber c12, PersonComplexNumber c2)
         {
-            return (c1.real == c2.real &&
-                    c1.imaginary == c2.imaginary) ;
+            return (c12.real == c2.real &&
+                    c12.imaginary == c2.imaginary) ;
         }
 
         public static bool operator !=(PersonComplexNumber c1, PersonComplexNumber c2)

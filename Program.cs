@@ -6,62 +6,81 @@ using System.Threading.Tasks;
 
 namespace _14_OperatorsOverloading_Indexers
 {
-    public class PersonComplexNumber
+    public class ComplexNumber
     {
        public int real;
        public int imaginary;
-        public PersonComplexNumber(int c1, int c2)
+        public ComplexNumber(int c1, int c2)
         {
             real = c1;
             imaginary = c2;
         }
+        public ComplexNumber(string c1)
+        {
+           // real = c1;
+            
+        }
         public override string ToString()
         {
-            return string.Format("{0} - real \n {1} - imaginary", real, imaginary);
+            return string.Format("\n{0} - real \n{1} - imaginary", real, imaginary);
         }
-        public static PersonComplexNumber operator +(PersonComplexNumber c1, PersonComplexNumber c2)
+        public static ComplexNumber operator +(ComplexNumber c1, ComplexNumber c2)
         {
             int newreal = c1.real + c2.real;
             int newimaginary = c1.imaginary + c2.imaginary;
-            return new PersonComplexNumber(newreal, newimaginary);
+            return new ComplexNumber(newreal, newimaginary);
         }
 
-        public static PersonComplexNumber operator -(PersonComplexNumber c1, PersonComplexNumber c2)
+        public static ComplexNumber operator -(ComplexNumber c1, ComplexNumber c2)
         {
             int newreal = c1.real - c2.real;
             int newimaginary = c1.imaginary - c2.imaginary;
-            return new PersonComplexNumber(newreal, newimaginary);
+            return new ComplexNumber(newreal, newimaginary);
         }
-        public static bool operator ==(PersonComplexNumber c12, PersonComplexNumber c2)
+        public static bool operator ==(ComplexNumber c1, ComplexNumber c2)
         {
-            return (c12.real == c2.real &&
-                    c12.imaginary == c2.imaginary) ;
+            return (c1.real == c2.real && c1.imaginary == c2.imaginary) ;
         }
 
-        public static bool operator !=(PersonComplexNumber c1, PersonComplexNumber c2)
+        public static bool operator !=(ComplexNumber c1, ComplexNumber c2)
         {
             return (c1.real != c2.real && c1.imaginary != c2.imaginary);
         }
 
-        public static bool operator <(PersonComplexNumber c1, PersonComplexNumber c2)
+        public static bool operator <(ComplexNumber c1, ComplexNumber c2)
         {
             return (c1.real < c2.real && c1.imaginary < c2.imaginary);
         }
-        public static bool operator >(PersonComplexNumber c1, PersonComplexNumber c2)
+        public static bool operator >(ComplexNumber c1, ComplexNumber c2)
         {
             return (c1.real > c2.real && c1.imaginary > c2.imaginary);
         }
+
+        //public static explicit operator ComplexNumber(string s)
+        //{
+        //   
+        //}
+
+        //public static implicit operator string(ComplexNumber s1)
+        //{
+        // 
+        //}
+
 
     }
     class Program
     {
         static void Main(string[] args)
         {
-            PersonComplexNumber x = new PersonComplexNumber(11, 5);
-            PersonComplexNumber y = new PersonComplexNumber(11, 5);
+            ComplexNumber x = new ComplexNumber(11, 5);
+            ComplexNumber y = new ComplexNumber(11, 5);
+            ComplexNumber z = new ComplexNumber("dw");
             Console.WriteLine(x != y);
-            Console.WriteLine(x > y);
+            Console.Write(x > y);
             //string f = Console.ReadLine();
+            //Console.Write(z.ToString());
+            Console.WriteLine(x);
+
         }
     }
 }

@@ -18,7 +18,7 @@ namespace _14_OperatorsOverloading_Indexers
 
         public override string ToString()
         {
-            return string.Format("\n{0} - real \n{1} - imaginary", real, imaginary);
+            return string.Format("{0} - real \n{1} - imaginary", real, imaginary);
         }
         public static ComplexNumber operator +(ComplexNumber c1, ComplexNumber c2)
         {
@@ -61,8 +61,6 @@ namespace _14_OperatorsOverloading_Indexers
         //{
         // 
         //}
-
-
     }
     class Program
     {
@@ -70,12 +68,12 @@ namespace _14_OperatorsOverloading_Indexers
         {
             ComplexNumber x = new ComplexNumber(11, 5);
             ComplexNumber y = new ComplexNumber(11, 5);
+            ComplexNumber z = new ComplexNumber(1, 4);
             Console.WriteLine(x != y);
-            Console.Write(x > y);
-            //string f = Console.ReadLine();
-            //Console.Write(z.ToString());
-            Console.WriteLine(x);
-
+            Console.WriteLine(x > z);
+            Console.WriteLine(y - z);
+            z = x + y + z;
+            Console.WriteLine(z);
         }
     }
 }
